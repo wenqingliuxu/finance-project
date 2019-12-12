@@ -21,16 +21,12 @@ import java.util.List;
  */
 @Service
 @Slf4j
-@RabbitListener(queues="firstMQ")
 public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductMapper productMapper;
     @Autowired
     private RedisTemplate redisTemplate;
-    @RabbitHandler
-    public void fetch(String acceptMsg){
-        log.info("=================receive:"+acceptMsg);
-    }
+
     /**
      * 通过ID查询产品
      * @param pdcId

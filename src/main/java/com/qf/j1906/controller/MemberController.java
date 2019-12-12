@@ -44,6 +44,7 @@ public class MemberController {
     @RequestMapping(value = "/getUserByName", method = RequestMethod.GET)
     public MsgResult getUserByName(@RequestParam("uName") String uName){
         MsgResult result = memberService.getUserByName(uName);
+        log.info("根据用户名(uName)查用户信息");
         return result;
     }
 
